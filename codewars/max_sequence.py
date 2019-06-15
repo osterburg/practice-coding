@@ -13,11 +13,11 @@ def maxSequence(arr):
     max, curr = 0, 0
 
     for i in arr:
-        curr += i
-        if curr < 0:
-            curr = 0
-        if curr > max:
-            max = curr
+        curr += i  # add number from array
+        if curr < 0:  # check if curr value is less than zero
+            curr = 0  # if so, set curr back to zero
+        if curr > max:  # check if curr value is higher than max value
+            max = curr  # if so, set max to curr value
 
     return max
 

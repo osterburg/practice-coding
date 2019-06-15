@@ -1,2 +1,7 @@
 # practice-coding
-coding exercises from leetcode, codesignal and codewars
+Coding exercises from 
+ - [hackerrank](https://www.hackerrank.com)
+ - [leetcode](https://leetcode.com)
+ - [codesignal](https://codesignal.com)
+ - [codewars](https://www.codewars.com)
+ - [Daily Coding Problem](https://www.dailycodingproblem.com)

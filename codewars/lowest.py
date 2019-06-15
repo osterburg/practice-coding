@@ -20,8 +20,8 @@
 #
 # Goodluck!
 def lowest(*days):
-    return [min(day) for day in days]
-
+    # return [min(day) for day in days]
+    return list(map(min, days))
 
 test = ([15, 14, 13, 12, 10], [16, 17, 12, 9, 11], [18, 16, 15, 14, 12])
 print(lowest(*test))

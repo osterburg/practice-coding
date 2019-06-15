@@ -34,11 +34,13 @@
 # queue_time([2,3,10], 2)
 #   should return 12
 def queue_time(customers, n):
-    aisles = [0] * n
-    for i in customers:
-        aisles.sort()
-        aisles[0] += i
-    return max(aisles)
+    aisles = [0] * n     # create number of aisles starting with 0
+
+    for i in customers:  # iterate over all customers
+        aisles.sort()    # sort the aisles list (low -> high)
+        aisles[0] += i   # add new value to first aisle, because they are done
+
+    return max(aisles)   # return max value from the aisles list
 
 
 customers = [

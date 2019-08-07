@@ -1,4 +1,4 @@
-filename = '/Users/stephanosterburg/Projects/practice-coding/hackerrank/nested-list-testcases/input/input01.txt'
+filename = '/Users/stephanosterburg/Projects/practice-coding/hackerrank/nested-list-testcases/input/input00.txt'
 
 with open(filename) as f:
     lines = [line.rstrip('\n') for line in f]
@@ -6,14 +6,10 @@ with open(filename) as f:
 
 mylist = []
 for i in range(1, len(lines), 2):
-    mylist.append([lines[i + 1], lines[i]])
+    mylist.append([lines[i], float(lines[i+1])])
+# print(mylist)
 
-mylist.sort()
-mylist.reverse()
-mylist.pop()
-mylist.sort()
-
-note = mylist[0][0]
-for i in mylist:
-    if i[0] == note:
-        print(i[1])
+# Get second highest value
+second_highest = sorted(list(set([notes for name, notes in mylist])))[1]
+# Print names with second highest valeus
+print('\n'.join([a for a, b in sorted(mylist) if b == second_highest]))

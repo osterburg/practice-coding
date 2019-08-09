@@ -5,11 +5,15 @@ filename = '/Users/stephanosterburg/Projects/practice-coding/hackerrank/alphabet
 
 def print_rangoli(size):
     # your code goes here
+    # Get lowercase alphabet
     alpha = string.ascii_lowercase
+
     L = []
     for i in range(size):
-        s = "-".join(alpha[i:size])
-        L.append((s[::-1] + s[1:]).center(4 * size - 3, "-"))
+        # Get subset of alphabet string
+        s = '-'.join(alpha[i:size])
+        # Reverse string, add string minus first letter, center it in size and append  to L
+        L.append((s[::-1] + s[1:]).center(4 * size - 3, '-'))
 
     print('\n'.join(L[:0:-1] + L))
 

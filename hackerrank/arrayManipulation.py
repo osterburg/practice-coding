@@ -20,7 +20,6 @@
 # The required answer will be .
 #
 import os
-import itertools
 
 def arrayManipulation(n, queries):
     arr = [0] * n # (n+1)

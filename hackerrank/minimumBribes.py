@@ -9,7 +9,6 @@
 def minimumBribes(q):
     moves = 0
     for key, value in enumerate(q):
-
         if (value-1) - key > 2:
             print("Too chaotic")
             return

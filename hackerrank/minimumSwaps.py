@@ -2,6 +2,7 @@ def minimumSwaps(arr):
     swaps = 0
 
     for i in range(len(arr)):
+        # Check if key and value are equal
         while arr[i] != i + 1:
             temp = arr[arr[i] - 1]
             arr[arr[i] - 1] = arr[i]

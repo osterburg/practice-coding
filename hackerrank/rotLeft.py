@@ -1,7 +1,7 @@
 def rotLeft(a, d):
     N = len(a)
     r = a[d - N : N] + a[0 : d - N]
-    return(' '.join(str(e) for e in r))
+    return(' '.join(map(str, r)))
 
 
 

@@ -23,16 +23,17 @@ import os
 import itertools
 
 def arrayManipulation(n, queries):
-    arr = [0] * (n+1)
+    arr = [0] * n # (n+1)
     for query in queries:
-        # for i in range(int(query[0])-1, int(query[1]), 1):
-        #     arr[i] += int(query[2])
-        a, b, k = query[0], query[1], query[2]
-        arr[a - 1] = arr[a - 1] + k
-        arr[b] = arr[b] - k
-
-    for i in range(1, n):
-        arr[i] += arr[i - 1]
+        for i in range(int(query[0])-1, int(query[1]), 1):
+            arr[i] += int(query[2])
+    # The below code passes on hackerrank
+    #     a, b, k = query[0], query[1], query[2]
+    #     arr[a - 1] = arr[a - 1] + k
+    #     arr[b] = arr[b] - k
+    #
+    # for i in range(1, n):
+    #     arr[i] += arr[i - 1]
 
     return max(arr)
 

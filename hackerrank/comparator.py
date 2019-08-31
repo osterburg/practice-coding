@@ -30,3 +30,10 @@ for i in range(n):
 data = sorted(data, key=cmp_to_key(Player.comparator))
 for i in data:
     print(i.name, i.score)
+
+# Expected Output:
+# aleksa 150
+# amy 100
+# david 100
+# aakansha 75
+# heraldo 50

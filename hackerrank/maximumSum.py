@@ -10,8 +10,7 @@ def maximumSum(a, m):
     #     if t > r:
     #         r = t
     result = 0
-    min = 0
-    max, k = 1, 1
+    min, max, k = 0, 1, 0
     for i in range(len(a)):
         for j in range(len(a)-k):
             temp = sum(a[min:max]) % m
@@ -32,4 +31,4 @@ print(maximumSum(a, m))
 
 m = 5
 a = [1, 5, 9]
-print(maximumSum(a, m))  # 4    
+print(maximumSum(a, m))  # 4

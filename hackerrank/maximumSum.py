@@ -12,7 +12,14 @@
 # [1,2,3]		6	0
 #
 # The maximum modulus is 1.
-# 
+#
+import math
+import os
+import random
+import re
+import sys
+import filecmp
+
 def maximumSum(a, m):
 
     result = 0
@@ -31,6 +38,34 @@ def maximumSum(a, m):
     return result
 
 
+if __name__ == '__main__':
+    input_f = '/Users/stephanosterburg/Projects/practice-coding/hackerrank/maximum-subarray-sum-testcases/input/input99.txt'
+    output_f = '/Users/stephanosterburg/Projects/practice-coding/hackerrank/maximum-subarray-sum-testcases/output/output99.txt'
+    result_f = '/Users/stephanosterburg/Projects/practice-coding/hackerrank/maximum-subarray-sum-testcases/output/result99.txt'
+    fptr = open(result_f, 'w')
+
+    with open(input_f) as f:
+        lines = [line.rstrip('\n') for line in f]
+        q = int(lines[0]) * 2
+
+    for i in range(1, q, 2):
+        nm = lines[i].split()
+
+        n = int(nm[0])
+        m = int(nm[1])
+        a = list(map(int, lines[i+1].rstrip().split()))
+
+        result = maximumSum(a, m)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+    
+    print(filecmp.cmp(output_f, result_f))
+
+
+"""    test cases
 m = 7
 a = [3, 3, 9, 9, 5]
 print(maximumSum(a, m))
@@ -50,3 +85,4 @@ a = [846930887, 1681692778, 1714636916, 1957747794, 424238336, 719885387, 164976
     1914544920, 608413785, 756898538, 1734575199, 1973594325, 149798316, 2038664371,
     1129566414]
 print(maximumSum(a, m))  # 1802192837
+"""

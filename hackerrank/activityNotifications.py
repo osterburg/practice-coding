@@ -16,10 +16,19 @@ import numpy as np
 #     n = len(lst)
 #     s = sorted(lst)
 #     return (sum(s[n//2-1:n//2+1])/2.0, s[n//2])[n % 2] if n else None
-
+#
+# 4 thoughts that may help:
+# 1.) Counting sort
+# 2.) A Queue
+# 3.) Pay attention to the even case.
+# 4.) Integer division is a blessing and a curse, be careful.
+#
+# Your code did not execute within the time limits :-(
+#
 def activityNotifications(expenditure, d):
     count = 0
-    for i in range((len(expenditure)-d)):
+    r = len(expenditure) - d
+    for i in range(r):
         m = np.median(expenditure[i:i+d])
         # print(expenditure[i:i+d])
         # print('median: {}'.format(m))

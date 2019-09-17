@@ -16,7 +16,7 @@ def maximumPerimeterTriangle(sticks):
 
 
 if __name__ == '__main__':
-    filename = '/Users/stephanosterburg/Projects/practice-coding/hackerrank/maximum-perimeter-triangle-testcases/input/input01.txt'
+    filename = '/Users/stephanosterburg/Projects/practice-coding/hackerrank/maximum-perimeter-triangle-testcases/input/input00.txt'
 
     with open(filename) as f:
         n = f.readline().split()

@@ -1,5 +1,6 @@
+import os
 import math
-import numpy as np
+import statistics
 
 # Given the number of trailing days d and a client's total daily expenditures
 # for a period of n days, find and print the number of times the client will
@@ -29,16 +30,22 @@ def activityNotifications(expenditure, d):
     count = 0
     r = len(expenditure) - d
     for i in range(r):
-        m = np.median(expenditure[i:i+d])
+        m = statistics.median(expenditure[i:i+d])
         # print(expenditure[i:i+d])
         # print('median: {}'.format(m))
         # print('next : {}\n'.format(expenditure[i+d]))
 
-        if m * 2 <= expenditure[i+d]:
+        if m * 2 <= expenditure[i + d]:
             count += 1
 
     return count
 
-d = 5
-expenditure = [2, 3, 4, 2, 3, 6, 8, 4, 5]
-print(activityNotifications(expenditure, d))
+if __name__ == '__main__':
+    pwd = os.getcwd()
+    filename = open(pwd + "/fraudulent-activity-notifications-testcases/input/input00.txt", 'r')
+    d = list(map(int, filename.readline().split()))[1]
+
+    expenditure = list(map(int, filename.readline().rstrip().split()))
+
+    result = activityNotifications(expenditure, d)
+    print(result)

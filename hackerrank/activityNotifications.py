@@ -44,7 +44,6 @@ if __name__ == '__main__':
     pwd = os.getcwd()
     filename = open(pwd + "/fraudulent-activity-notifications-testcases/input/input00.txt", 'r')
     d = list(map(int, filename.readline().split()))[1]
-
     expenditure = list(map(int, filename.readline().rstrip().split()))
 
     result = activityNotifications(expenditure, d)

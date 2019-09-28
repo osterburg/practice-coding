@@ -25,9 +25,9 @@ def least_common_multiplier(a, b):
 
 
 def getTotalX(a, b):
-    min_g = functools.reduce(greatest_common_devisor, b)
-    max_l = functools.reduce(least_common_multiplier, a)
-    count = sum([1 for x in range(max_l, min_g + 1, max_l) if min_g % x == 0])
+    gcd = functools.reduce(greatest_common_devisor, b)
+    lcm = functools.reduce(least_common_multiplier, a)
+    count = sum([1 for x in range(lcm, gcd + 1, lcm) if gcd % x == 0])
 
     return count
 

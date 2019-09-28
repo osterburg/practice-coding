@@ -5,7 +5,7 @@ import re
 import sys
 import itertools
 
-
+# See divisible-sum-pairs-testcases/divisible-sum-pairs-English.pdf for discription.
 def divisibleSumPairs(n, k, arr):
     count = 0
     for i in range(len(arr)):

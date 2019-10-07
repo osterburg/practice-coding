@@ -1,0 +1,49 @@
+import math
+import os
+import random
+import re
+import sys
+
+# Input Format
+# The first line contains integers  and  separated by a space.
+# The second line contains  integers, the elements of the array.
+# The third and fourth lines contain  integers,  and , respectively.
+#
+# Output Format
+# Output a single integer, your total happiness.
+#
+# Sample Input
+# 3 2
+# 1 5 3
+# 3 1
+# 5 7
+#
+# Sample Output
+# 1
+def noidea(arr, A, B):
+    # check = all(item in List1 for item in List2)
+    # check =  any(item in List1 for item in List2)
+    
+    count = 0
+    for i in A:
+        if i in arr:
+            count += 1
+
+    for j in B:
+        if j in arr:
+            count -= 1
+
+    return count
+
+
+if __name__ == '__main__':
+    pwd = os.getcwd()
+    filename = open(pwd + "/no-idea-testcases/input/input00.txt", 'r')
+
+    nm = list(map(int, filename.readline().split()))
+    arr = list(map(int, filename.readline().split()))
+    A = list(map(int, filename.readline().split()))
+    B = list(map(int, filename.readline().split()))
+
+    result = noidea(arr, A, B)
+    print(result)

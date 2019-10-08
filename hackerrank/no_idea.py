@@ -1,8 +1,6 @@
-import math
 import os
-import random
-import re
-import sys
+from collections import Counter
+
 
 # Input Format
 # The first line contains integers  and  separated by a space.
@@ -23,17 +21,24 @@ import sys
 def noidea(arr, A, B):
     # check = all(item in List1 for item in List2)
     # check =  any(item in List1 for item in List2)
-    
-    count = 0
-    for i in A:
-        if i in arr:
-            count += 1
 
-    for j in B:
-        if j in arr:
-            count -= 1
+    # count = 0
+    # for i in A:
+    #     if i in arr:
+    #         count += 1
+    #
+    # for j in B:
+    #     if j in arr:
+    #         count -= 1
 
-    return count
+    arr = Counter(arr)
+    A = Counter(A)
+    B = Counter(B)
+
+    A_overlap = list((A & arr).elements())
+    B_overlap = list((B & arr).elements())
+
+    return len(A_overlap) - len(B_overlap)
 
 
 if __name__ == '__main__':

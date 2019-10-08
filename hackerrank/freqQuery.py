@@ -49,6 +49,9 @@ from collections import defaultdict, deque
 # For the second query of type 3, there are two integers in array=[6, 10, 10, 6]
 # whose frequency is 2 (integers = 6 and 10). So, the answer is 1.
 #
+# input99.txt
+# NOTE: Your code did not execute within the time limits
+#
 def freqQuery(queries):
     d = defaultdict(int)
     result = []
@@ -68,7 +71,7 @@ def freqQuery(queries):
 
 if __name__ == '__main__':
     pwd = os.getcwd()
-    filename = open(pwd + "/hackerrank/frequency-queries-testcases/input/input00.txt", 'r')
+    filename = open(pwd + "/frequency-queries-testcases/input/input09.txt", 'r')
 
     q = int(filename.readline().strip())
     queries = []
